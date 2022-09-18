@@ -1,0 +1,76 @@
+%% References used
+%% https://alexanderfabisch.github.io/latex-for-dissertations.html
+
+\documentclass[
+    draft=false,
+    paper=a4,
+    % twoside, % twoside is default for scrbook
+    paper=portrait,
+    pagesize=auto,
+    fontsize=11pt,
+    DIV=11, % DIV value as calculated from paper and font size
+    % BCOR=15mm, % binding correction
+    % titlepage=firstiscover, % print title page as cover
+    % version=last,
+    % headings=twolinechapter
+    ]{scrartcl}
+
+\usepackage{scrhack} % fix a few common issues with KOMA-classes
+
+\setkomafont{disposition}{\rmfamily}
+\usepackage{libertinus}
+% Citation Management
+\usepackage[
+    style=authoryear-comp, % citation style
+    natbib=true,
+    backend=biber,
+    maxnames=2,
+    maxbibnames=99]{biblatex}
+\addbibresource{literature.bib}
+
+% while drafting
+% \includeonly{chapters/introduction}
+
+\usepackage[ngerman, english]{babel} %last language in the list is the main language, in this case English (American)
+% font as needed for additional languages
+
+% CJK support still best by additional package
+\usepackage{xeCJK}
+\setCJKmainfont{Noto Serif CJK TC}
+\setCJKsansfont{Noto Sans CJK TC}
+\setCJKmonofont{Noto Sans Mono CJK TC}
+% quotation style
+\usepackage[english=american]{csquotes}
+
+% FOR TESTING
+\usepackage{blindtext}
+% \usepackage{showframe}
+
+% other
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\begin{document}
+
+% title information
+\subject{Proposal for a Master's Thesis}
+\title{A Cross-Lingual Quantitative Typology of Valency Classes}
+\author{Siyu Tao}
+\date{Draft as of \today}
+
+\maketitle
+
+\input{sections/abstract}
+\input{sections/introduction}
+\input{sections/background}
+\input{sections/methodology}
+\input{sections/plan}
+\input{sections/conclusion}
+
+% \appendix
+% \include{appendices/appendix_a}
+
+\newpage
+\section*{Bibliography}
+\printbibliography[heading=none]
+\end{document}
