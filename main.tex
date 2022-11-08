@@ -1,6 +1,3 @@
-%% References used
-%% https://alexanderfabisch.github.io/latex-for-dissertations.html
-
 \documentclass[
     draft=true,
     paper=a4,
@@ -28,12 +25,14 @@
     maxnames=2,
     maxbibnames=99]{biblatex}
 \addbibresource{literature.bib}
+\emergencystretch=2em
 
-\setlength {\marginparwidth }{2cm} 
+
 % while drafting
 % \includeonly{sections/introduction}
+\setlength {\marginparwidth }{2cm} 
 \usepackage[obeyDraft]{todonotes}
-% \setuptodonotes{inline}
+\setuptodonotes{inline}
 
 \usepackage[ngerman, english]{babel} %last language in the list is the main language, in this case English (American)
 % font as needed for additional languages
