@@ -2,8 +2,9 @@
 %% https://alexanderfabisch.github.io/latex-for-dissertations.html
 
 \documentclass[
-    draft=false,
+    draft=true,
     paper=a4,
+    % mpinclude=true,
     % twoside, % twoside is default for scrbook
     paper=portrait,
     pagesize=auto,
@@ -28,8 +29,11 @@
     maxbibnames=99]{biblatex}
 \addbibresource{literature.bib}
 
+\setlength {\marginparwidth }{2cm} 
 % while drafting
-% \includeonly{chapters/introduction}
+% \includeonly{sections/introduction}
+\usepackage[obeyDraft]{todonotes}
+% \setuptodonotes{inline}
 
 \usepackage[ngerman, english]{babel} %last language in the list is the main language, in this case English (American)
 % font as needed for additional languages
@@ -46,15 +50,22 @@
 \usepackage{blindtext}
 % \usepackage{showframe}
 
+
 % other
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{caption}
+\usepackage{subcaption}
+
+
+% linguistics stuff
+\usepackage{forest}
 
 \begin{document}
 
 % title information
-\subject{Proposal for a Master's Thesis}
-\title{A Cross-Lingual Quantitative Typology of Valency Classes}
+\subject{Proposal for a Master's thesis}
+\title{Quantitative typology of valency classes}
 \author{Siyu Tao}
 \date{Draft as of \today}
 
