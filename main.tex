@@ -1,5 +1,5 @@
 \documentclass[
-    % draft=true,
+    draft=true,
     paper=a4,
     % mpinclude=true,
     % twoside, % twoside is default for scrbook
@@ -29,8 +29,8 @@
 
 
 % while drafting
-% \includeonly{sections/introduction}
-\setlength {\marginparwidth }{2cm} 
+\includeonly{sections/background}
+\setlength{\marginparwidth }{2cm} 
 \usepackage[obeyDraft]{todonotes}
 \setuptodonotes{inline}
 
@@ -70,12 +70,12 @@
 
 \maketitle
 
-\input{sections/abstract}
-\input{sections/introduction}
-\input{sections/background}
-\input{sections/methodology}
-\input{sections/plan}
-\input{sections/conclusion}
+\include{sections/abstract}
+\include{sections/introduction}
+\include{sections/background}
+\include{sections/methodology}
+\include{sections/plan}
+\include{sections/conclusion}
 
 % \appendix
 % \include{appendices/appendix_a}

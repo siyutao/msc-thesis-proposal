@@ -19,35 +19,36 @@ Most linguistic theories assert the centrality of the verb in determining either
 %% subcategorization in generative grammar
 In generative grammar, the syntactic valency of a verb is treated under a similar notion of \textit{subcategorization} \citep{chomsky1965a}. As an example, a transitive verb must be followed by a direct object, whereas intransitive verb cannot, as such transitive and intransitive verbs form subcategories of the category verb. Verbs are therefore assigned to \textit{subcategorization frames} which are considered part of the lexical entry of the verb, which specifies the number and type of complements (objects and obliques), as well as of the subject in later theories, that the verb can be subcategorized for. Note that the subcategorization here is primarily syntactically driven. \citet{jackendoff1972,jackendoff1987,jackendoff1992}, following \citet{katz1963} and \citet{gruber1962}, further develops a theory of thematic relations and posits that argument structure serves as the interface between syntactic and thematic structures.
 
-% TODO: Still unclear on relationship between subcategorization and selection in generative grammar; also maybe more citations and examples here
+\todo{Still unclear on relationship between subcategorization and selection in generative grammar; also maybe more citations and examples here} 
 
 %% Levin
 As compared to the broad distinctions such as those made between transitive and intransitive verbs, the verb classes in \citet{levin1993} provide a vastly more fine-grained categorization of verbs based on their syntactic behavior. Guided by the assumption that the syntactic behavior of verbs are determined semantically, Levin reasons that patterning together classes of verbs based on their diathesis alternations should result in semantically coherent verb classes. Levin's work has been highly influential both in the development of valency theory and in computational approaches to lexical semantics. VerbNet \cite{kipper-schuler2005, kipper2006, kipper2008} is a prominent example of projects, combining WordNet \cite{fellbaum1998, miller1995} with Levin-style verb classes. 
-% TODO: Computational work derived from it, some examples
+\todo{Computational work derived from it, some examples}
 
 %% frame semantics - fillmore
-A different line of research stems from Charles Fillmore's 
-frame semantics \cite{fillmore1977, fillmore1977a, fillmore1982}
+A different line of research stems from Charles Fillmore's frame semantics \citep{fillmore1977, fillmore1977a, fillmore1982},
 as developed from his earlier
-case grammar \citep{fillmore1968,fillmore1970} 
-FrameNet \citep{fillmore2015}
+case grammar \citep{fillmore1968,fillmore1970}.
+
+Computational work: FrameNet \citep{fillmore2015}
 
 %% other construction grammar
-further dev in construction grammar and corresponding approaches to construction
-\citet{goldberg1992,goldberg1995}
+further dev in construction grammar and corresponding approaches to valency frame as a construction \citet{goldberg1992,goldberg1995}
+
+\citet{croft2012} takes a CxG approach. 
 
 CxG would consider valency frame as a level of construction. Whether this construction is autonomous will depend on whether the unpredictability condition is satisfied - in so far that the properties of valency frame cannot be predicted from other grammatical units.
-\citet{croft2012} takes a CxG approach. 
 
 
 \subsection{Dependency grammars}
 
-% dependency and contituency grammars
-\citet{demarneffe2019}
-% universal dependencies
+Distinction between dependency and constituency grammars \citep{stabler2019}
 
-% computational application
+different dependency grammars \citet{demarneffe2019}
 
+universal dependencies \citep{demarneffe2021}
+
+% other computational application
 
 
 \subsection{Typological perspectives on valency and dependency}
@@ -55,21 +56,22 @@ CxG would consider valency frame as a level of construction. Whether this constr
 % why approach valency from typological perspective
 Typological interest in valency is primarily focused on cross-linguistic mismatches.
 
-Already \citet{tesniere1959} describes the process of \textit{metataxis}, by which syntactic structures of one language is translated to those of another.  
+\citet{tesniere1959} describes the process of \textit{metataxis}, by which syntactic structures of one language is translated to those of another.  
 
-\citet{levin2005} identifies five major questions that are necessary for a complete theory of argument realization.
-\todo{copy from hand notes and add how a typological study can help answer some of these questions}
-
-% monolingual valency dictionaries
-
-One of the key question is also whether this valency frame are syntactically defined or semantically so. Since in the study of argument structure, we're dealing with the syntactic expression of lexical and non-lexical semantics, this question is particularly difficult to answer.
+\citet{levin2005} identify five major questions that are necessary for a complete theory of argument realization.
+\todo{copy from hand notes and add how a typological study relates some of these questions}
 
 % cross-lingual contrastive studies
+\todo{various monolingual valency dictionaries and contrastive studies}
 
-\cite{baker2020, ellsworth2021} FrameNet and typology
-
-\cite{croft2017} Croft's typology and dependence grammar
 % other typological approaches
 \citet{tsunoda1981, tsunoda1985} proposes a hierarchy of verbs
 
+With computational work: one of the key issue to pay attention to is whether the valency frames / verb classes are syntactically or semantically derived. Important to be clear to avoid circularity and since we're dealing with syntax-semantics interface.
+
+Computational work on semantic frame induction / verb classes:  \citet{abend2009, basili1993, bickel2014, dowty1991, fellbaum1998, fillmore1968, furstenau2012, kipper-schuler2005, kipper2008, korhonen2006, levin2015, majewska2018, majewska2020, majewska2021, miller1990, miller1995, navarretta2000, palmer2005, say2014, sayeed2018, schulteimwalde2002, schulteimwalde2003, schulteimwalde2006, snider2006, sun2008, sun2009, sun2013, titov2012, watanabe2010, yamada2021} 
+
+\cite{baker2020, ellsworth2021} FrameNet and typology
+
+\cite{croft2017} on typology and dependency grammar
 
