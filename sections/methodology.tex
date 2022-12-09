@@ -1,17 +1,42 @@
-\section{Data and methodology}
+\section{Data}
 
-\subsection{Data sources}
+\subsection{Corpora}
 
-\paragraph{\textbf{UD Treebanks}} \cite{universaldep}
-\paragraph{\textbf{ValPaL}} \citep{valpal} is a database
+The primary data source will be the Universal Dependencies treebanks \citep{universaldep}. Universal dependencies (UD) is designed to be a cross-linguistically consistent system for annotating morphosyntactic information within a dependency grammar framework \citep{demarneffe2021}. \todo{specific criteria for selecting which treebanks to use and other considerations}
+
+(If parallel treebanks are needed) The Parallel Universal Dependencies (PUD) treebanks \citep{zeman2017} include 1000 sentences in 18 languages that were randomly picked from newswire and Wikipedia and annotated according to UD v2 guidelines. The 18 languages are English, German, French, Italian, Spanish, Arabic, Hindi, Chinese, Indonesian, Japanese, Korean, Portuguese, Russian, Thai, Turkish, Czech, Finnish and Swedish. Of the sentences, 750 were originally English, while the remaining 250 sentences come from German, French, Italian and Spanish texts and translated to other languages through English.
+
+\subsection{Reference and Validation Data}
+
+In additional to the main data source of UD treebanks, additional resources will be used in the study as reference and to perform validation and evaluation of the intermediate results. As an example, the valency frames and verb classes as induced from the UD treebanks will be validated, where possible, against the expert-annotated data from \textbf{ValPaL}\citep{valpal}. \todo{more details on valpal and other possible data}
+
+\section{Methodology}
+
+\subsection{Clustering}
+
+% clustering 
+\paragraph{\textbf{Step 1: Coding Feature Selection}}
+In the first step, the specific uses of verbs are abstracted through a feature selection process, where only features that are relevant to valency frame encoding are included. A verb can therefore be represented by a list of its features. This is in order to focus on whether semantically coherent verb classes can be induced on valency frame information. In selecting the features, cross-lingual differences in valency frame coding will be taken into account, e.g. whether a language uses cases or word order to encode valency frame information. \todo{Examples from EN, DE, ZH}
+
+\paragraph{\textbf{Step 2: Valency Frame Induction}}
+Given the selected features, the valency frame are then derived using unsupervised clustering algorithms such as k-means \citep{macqueen1967}, which iteratively updates the center of cluster which is represented by the center of data points, until the criteria for convergence is met. Other clustering algorithms should also be investigated \citep{xu2015a}. \todo{what distance measure to use?}
+
+\paragraph{\textbf{Step 3: Verb Class Induction}}
+
+\begin{figure}
+    \includegraphics[width=\textwidth]{figures/verb_alternation_classes.png}
+    \centering    
+\end{figure}
+
+Approach similar to \citet{parisien2010}, where a Hierarchical Dirichlet process is extended to account for diathesis alternations. Each verb will be represented by its distribution over the valency frames of the language, which are then clustered in a similar process as step 2.
 
 
-\subsection{Methodology}
+\subsection{Cross-lingual verb sense alignment}
 
+A cross-lingual aligned list of counterpart verbs will be needed to compare the verb classes and valency frames. The easiest way to do this is likely through existing cross-lingual word lists such as LanguageNet, part of the PanLex project. http://uakari.ling.washington.edu/languagenet/available/
 
-\paragraph{Clustering}
+Alternatively, lexicon induction from cross-lingual word embeddings and other NLP methods may also be considered.
 
-non trivial problem to distinguish between complement vs adjuncts
+\subsection{Information theory}
 
-\paragraph{Alignment}
-\paragraph{Information Theory}
+Complexity and point-wise mutual information, like in \citet{say2014}.
