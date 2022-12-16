@@ -4,42 +4,32 @@ This section presents the proposed data sources and methodology of the thesis. \
 
 \subsection{Data sources}\label{subsec:data-sources}
 
-Universal Dependencies (UD) is designed to be a cross-linguistically consistent system for annotating morphosyntactic information within a dependency grammar framework \citep{demarneffe2021}. The UD treebanks \citep{universaldep} is the collection of cross-lingual treebanks annotated in the UD framework by an open community of more than 300 contributors. 
+Universal Dependencies (UD) is designed to be a cross-linguistically consistent system for annotating morphosyntactic information within a dependency grammar framework \citep{demarneffe2021}. The UD treebanks \citep{universaldep} is the collection of cross-lingual treebanks annotated in the UD framework by an open community of more than 300 contributors. See \ref{tab:treebanks} for a table of languages available in UD v2.5, as an example. \todo{include some more statistics of UD and a potential list of languages to study}
 
 \input{figures/ud_languages.tex}
 
-See \ref{tab:treebanks} for a table of languages available in UD v2.5 (to be updated for v2.11)
-
-
 A subset of the UD treebanks, the Parallel Universal Dependencies (PUD) treebanks were originally developed for the CoNLL-2017 Shared Task \citep{zeman2017} and include 1000 sentences in 18 languages that were randomly picked from newswire and Wikipedia and annotated according to UD v2 guidelines. The 18 languages are English, German, French, Italian, Spanish, Arabic, Hindi, Chinese, Indonesian, Japanese, Korean, Portuguese, Russian, Thai, Turkish, Czech, Finnish and Swedish. Of the sentences, 750 were originally English, while the remaining 250 sentences come from German, French, Italian and Spanish texts and translated to other languages through English. While facing obvious limitation in terms of language coverage, corpus size, and possible artifacts due to the so-called ``translationese'', parallel corpora allow for cross-lingual comparison with a smaller data size and will also be considered in this thesis.
 
-In additional to the main data source of UD treebanks, additional resources will be used in the study as reference and to perform validation and evaluation of the intermediate results. As an example, the valency frames and verb classes as induced from the UD treebanks will be validated, where possible, against the expert-annotated data from \textbf{ValPaL}\citep{valpal}. \todo{more details on valpal and other possible data}
+In additional to the main data source of UD treebanks, additional resources will be used in the study as reference and to perform validation and evaluation of the intermediate results. As an example, the valency frames and verb classes as induced from the UD treebanks will be validated, where possible, against the expert-annotated data from \textbf{ValPaL}\citep{valpal}. \todo{introduce ValPaL a bit more, mention VerbNet, PropBank, FrameNet as necessary}
 
 \subsection{Verb valency features}\label{subsec:features}
 
-A list of binary slot features
-
+In the first step, the specific uses of verbs are abstracted through a feature selection process. Each instance of verb use will be represented by syntactic features of the sentence, namely only features that are considered part of valency frame encoding are included. This is in order to focus on whether semantically coherent verb classes can be induced on valency frame information alone. In selecting the features, cross-lingual differences in valency frame coding will be taken into account, e.g. whether a language uses morphological cases or word order to encode valency frame information. \todo{Examples from EN, DE, ZH} 
 
 
 \subsection{Clustering}\label{subsec:clustering}
 
-The verb class induction from UD data can be broken down into a three-step process. 
+The clustering process after feature selection consists of two steps, but the clustering algorithms used need not be the same. The first is the automatic induction of valency frames in a language given the selected features. Given the valency frames in a language, each verb will then be represented by its distribution over the valency frames , which are then clustered into the verb classes.
+Possible clustering algorithms such as k-means \citep{macqueen1967}, which iteratively updates the center of cluster which is represented by the center of data points, until the criteria for convergence is met. Other clustering algorithms should also be investigated \citep{xu2015a}. But given the relative low dimensionality of features, complex clustering algorithms are not expected to be used. Given the two levels of clustering, an alternative approach to be explored is to perform a hierarchical clustering, e.g. a possible adaptation of \citet{parisien2010}, where a Hierarchical Dirichlet process is extended to account for diathesis alternations. 
 
-% clustering 
-\paragraph{\textbf{Step 1: Coding Feature Selection}}
-In the first step, the specific uses of verbs are abstracted through a feature selection process, where only features that are relevant to valency frame encoding are included. A verb can therefore be represented by a list of its features. This is in order to focus on whether semantically coherent verb classes can be induced on valency frame information. In selecting the features, cross-lingual differences in valency frame coding will be taken into account, e.g. whether a language uses cases or word order to encode valency frame information. \todo{Examples from EN, DE, ZH}
 
-\paragraph{\textbf{Step 2: Valency Frame Induction}}
-Given the selected features, the valency frame are then derived using unsupervised clustering algorithms such as k-means \citep{macqueen1967}, which iteratively updates the center of cluster which is represented by the center of data points, until the criteria for convergence is met. Other clustering algorithms should also be investigated \citep{xu2015a}. \todo{what distance measure to use?}
-
-\paragraph{\textbf{Step 3: Verb Class Induction}}
+\todo{what distance measure to use; concrete examplesfrom pilot; Hierarchical Dirichlet}
 
 \begin{figure}
     \includegraphics[width=\textwidth]{figures/verb_alternation_classes.png}
-    \centering    
+    \centering
 \end{figure}
 
-Approach similar to \citet{parisien2010}, where a Hierarchical Dirichlet process is extended to account for diathesis alternations. Each verb will be represented by its distribution over the valency frames of the language, which are then clustered in a similar process as step 2.
 
 
 \subsection{Cross-lingual verb sense alignment}\label{subsec:verblist}
@@ -50,7 +40,5 @@ Alternatively, lexicon induction from cross-lingual word embeddings and other NL
 
 \subsection{Information theory}\label{subsec:infotheory}
 
-Complexity and point-wise mutual information, like in \citet{say2014}.
-Complexity measure:
-
-Point-wise mutual information (PMI)
+Complexity and point-wise mutual information, cf. in \citet{say2014}.
+Complexity \& Point-wise mutual information (PMI)
