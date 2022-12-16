@@ -1,6 +1,6 @@
-\section{Background and related work}
+\section{Background and related work}\label{sec:background}
 
-\subsection{Valency and valency phenomena}
+\subsection{Valency and valency phenomena}\label{subsec:valency}
 
 % valency - terminology introduction
 
@@ -19,60 +19,65 @@ Most linguistic theories assert the centrality of the verb in determining either
 %% subcategorization in generative grammar
 In generative grammar, the syntactic valency of a verb is treated under a similar notion of \textit{subcategorization} \citep{chomsky1965a}. As an example, a transitive verb must be followed by a direct object, whereas intransitive verb cannot, as such transitive and intransitive verbs form subcategories of the category verb. Verbs are therefore assigned to \textit{subcategorization frames} which are considered part of the lexical entry of the verb, which specifies the number and type of complements (objects and obliques), as well as of the subject in later theories, that the verb can be subcategorized for. Note that the subcategorization here is primarily syntactically driven. \citet{jackendoff1972,jackendoff1987,jackendoff1992}, following \citet{katz1963} and \citet{gruber1962}, further develops a theory of thematic relations and posits that argument structure serves as the interface between syntactic and thematic structures.
 
-\todo{Still unclear on relationship between subcategorization and selection in generative grammar; also maybe more citations and examples here} 
+% unclear on relationship between subcategorization and selection in generative grammar; also maybe more citations and examples here later
 
 %% Levin
-As compared to the broad distinctions such as those made between transitive and intransitive verbs, the verb classes in \citet{levin1993} provide a vastly more fine-grained categorization of verbs based on their syntactic behavior. Guided by the assumption that the syntactic behavior of verbs are determined semantically, Levin reasons that patterning together classes of verbs based on their diathesis alternations should result in semantically coherent verb classes. Levin's work has been highly influential both in the development of valency theory and in computational approaches to lexical semantics. VerbNet \cite{kipper-schuler2005, kipper2006, kipper2008} is a prominent example of projects, combining WordNet \cite{fellbaum1998, miller1995} with Levin-style verb classes. 
-\todo{Computational work derived from it, some examples}
+As compared to the broad distinctions such as those made between transitive and intransitive verbs, the verb classes in \citet{levin1993} provide a vastly more fine-grained categorization of verbs based on their syntactic behavior. Guided by the assumption that the syntactic behavior of verbs are determined semantically, Levin reasons that patterning together classes of verbs based on their diathesis alternations should result in semantically coherent verb classes. Levin's work has been highly influential both in the development of valency theory and in computational approaches to lexical semantics. VerbNet \cite{kipper-schuler2005, kipper2006, kipper2008} is a prominent example of such projects, combining WordNet \cite{fellbaum1998, miller1995} with Levin-style verb classes.
 
 %% frame semantics - fillmore
 A different line of research stems from Charles Fillmore's frame semantics \citep{fillmore1977, fillmore1977a, fillmore1982},
 as developed from his earlier
-case grammar \citep{fillmore1968,fillmore1970} theories
+case grammar \citep{fillmore1968,fillmore1970} theories. 
+further dev in construction grammar (CxG) and corresponding approaches to valency frame as a construction \citet{goldberg1992,goldberg1995}
 
-Computational work: FrameNet \citep{fillmore2015}
-
-%% other construction grammar
-further dev in construction grammar and corresponding approaches to valency frame as a construction \citet{goldberg1992,goldberg1995}
+FrameNet \citep{fillmore2015} is an example of computational research that derives from the frame semantics framework.
 
 
-CxG would consider valency frame as a level of construction. Whether this construction is autonomous will depend on whether the unpredictability condition is satisfied - in so far that the properties of valency frame cannot be predicted from other grammatical units.
+An important distinction is that, in construction grammar theories, valency frames themselves are considered a level of construction. Whether this construction is autonomous or not will depend on whether the unpredictability condition is satisfied, i.e., whether the properties of valency frame cannot be predicted from other grammatical units. This provides 
 
+\subsection{Dependency grammars}\label{subsec:depgrammar}
 
-\subsection{Dependency grammars}
+In terms of their mathematical foundations, dependency grammars, based on the notion of dependencies, can be considered in contrast with constituency grammars, based on the notion of substitution \citep{stabler2019}. However, even most iterations of generative grammar theories, which are primarily constituency-based, adopt some notion of head-dependency (such as X-bar theory). \citet{demarneffe2019} cites the easiness of generalization across languages, its operationalization of human sentence processing facts, and the transparency and simplicity of representation as reasons why dependency-based representations have become increasingly widely adopted in linguistic theory and even more so in NLP. Here, however, I focus on why dependency representations lend themselves to cross-linguistic contrastive studies. 
 
-Distinction between dependency and constituency grammars \citep{stabler2019}
-
-different dependency grammars \citet{demarneffe2019}
-
+Different dependency grammars vary in whether they claim to be a sufficient representation of syntax, the levels of \citet{demarneffe2019}
 universal dependencies \citep{demarneffe2021}
+
 
 % other computational application
 
 
-\subsection{Typological perspectives on valency and dependency}
+\subsection{Typological perspectives on valency and dependency}\label{subsec:typology}
 
 % why approach valency from typological perspective
-Typological interest in valency is primarily focused on cross-linguistic mismatches.
-
-\citet{tesniere1959} describes the process of \textit{metataxis}, by which syntactic structures of one language is translated to those of another.  
-
-\citet{levin2005} identify five major questions that are necessary for a complete theory of argument realization.
-\todo{copy from hand notes and add how a typological study relates some of these questions}
+As \citet{tesniere1959} introduces his theory of valency and dependency, the cross-lingual differences in the structure is already in focus. Tesnière describes the process of \textit{metataxis}, by which syntactic structures of one language is ``translated'' to those of another. In other words, the primary comparative interest is in the mismatches. Indeed, if we assume a universal meaning for a given sentence, their differential realization in different languages need to be explained.
 
 % cross-lingual contrastive studies
-\todo{various monolingual valency dictionaries and contrastive studies}
+Cross-lingual contrastive studies are, generally bilingual and mostly between English and German. 
+
+
+
+
+% \citet{levin2005} identify five major questions that are necessary for a complete theory of argument realization.
+% \todo{copy from hand notes and add how a typological study relates some of these questions}
+
 
 % other typological approaches
 \citet{tsunoda1981, tsunoda1985} proposes a hierarchy of verbs
+\citep{tsunoda2015}
 
 With computational work: one of the key issue to pay attention to is whether the valency frames / verb classes are syntactically or semantically derived. Important to be clear to avoid circularity and since we're dealing with syntax-semantics interface.
+
+
+While the valency frames can themselves be considered a component of the syntactic structure of sentences, it is nevertheless clear that they are primarily a feature of the verbal lexicon. While there are certainly exceptions to the rule (such as the non-canonical use of verbs), it is generally possible to determine the possible valency frames given the verb. Cross-lingually, this means the comparison of the distribution of verbs across different verb classes and valency frames allows us to test possible universals regarding the organization of the verbal lexicon. The object of cross-lingual comparison therefore is crucially \textit{not} the valency frames or verb classes themselves, but the organization of the frames and classes.
+
+
+For example, \citet{say2014} rejects the equating of minor valency classes cross-lingually and study how the individual verbs care grouped into valency.
 
 Computational work on semantic frame induction / verb classes:  \citet{abend2009, basili1993, bickel2014, dowty1991, fellbaum1998, fillmore1968, furstenau2012, kipper-schuler2005, kipper2008, korhonen2006, levin2015, majewska2018, majewska2020, majewska2021, miller1990, miller1995, navarretta2000, palmer2005, say2014, sayeed2018, schulteimwalde2002, schulteimwalde2003, schulteimwalde2006, snider2006, sun2008, sun2009, sun2013, titov2012, watanabe2010, yamada2021} 
 % subdivide into e.g. semantic and syntatic classification
 
 \citet{baker2020, ellsworth2021} FrameNet and typology
 
-\citet{croft2017} on typology and dependency grammar
-\citet{croft2012} 
+\citet{croft2017} proposes more typologically sound modifications to the dependency grammar of UD. 
+
 

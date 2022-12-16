@@ -1,15 +1,25 @@
-\section{Data and methodology}
+\section{Data and methodology}\label{sec:methodology}
 
-This section presents the proposed data sources and methodology of the thesis. \S~\ref{subsec:data-sources} introduces the Universal Dependencies treebanks in more detailed as well as additional resources that will be used as reference and validation in this study. The rest of the section, \S~\ref{subsec:clustering}-\ref{subsec:infotheory}, presents the main computational methods to be used in the thesis.
+This section presents the proposed data sources and methodology of the thesis. \S\ref{subsec:data-sources} introduces the Universal Dependencies treebanks as well as additional resources that will be used as reference and validation in this study. The rest of the section, \S\ref{subsec:features}-\ref{subsec:infotheory}, presents the main computational methods to be used in the thesis.
 
 \subsection{Data sources}\label{subsec:data-sources}
 
-The primary data source will be the Universal Dependencies treebanks \citep{universaldep}. Universal dependencies (UD) is designed to be a cross-linguistically consistent system for annotating morphosyntactic information within a dependency grammar framework \citep{demarneffe2021}.
+Universal Dependencies (UD) is designed to be a cross-linguistically consistent system for annotating morphosyntactic information within a dependency grammar framework \citep{demarneffe2021}. The UD treebanks \citep{universaldep} is the collection of cross-lingual treebanks annotated in the UD framework by an open community of more than 300 contributors. 
 
-(If parallel treebanks are needed) The Parallel Universal Dependencies (PUD) treebanks \citep{zeman2017} include 1000 sentences in 18 languages that were randomly picked from newswire and Wikipedia and annotated according to UD v2 guidelines. The 18 languages are English, German, French, Italian, Spanish, Arabic, Hindi, Chinese, Indonesian, Japanese, Korean, Portuguese, Russian, Thai, Turkish, Czech, Finnish and Swedish. Of the sentences, 750 were originally English, while the remaining 250 sentences come from German, French, Italian and Spanish texts and translated to other languages through English.
+\input{figures/ud_languages.tex}
 
+See \ref{tab:treebanks} for a table of languages available in UD v2.5 (to be updated for v2.11)
+
+
+A subset of the UD treebanks, the Parallel Universal Dependencies (PUD) treebanks were originally developed for the CoNLL-2017 Shared Task \citep{zeman2017} and include 1000 sentences in 18 languages that were randomly picked from newswire and Wikipedia and annotated according to UD v2 guidelines. The 18 languages are English, German, French, Italian, Spanish, Arabic, Hindi, Chinese, Indonesian, Japanese, Korean, Portuguese, Russian, Thai, Turkish, Czech, Finnish and Swedish. Of the sentences, 750 were originally English, while the remaining 250 sentences come from German, French, Italian and Spanish texts and translated to other languages through English. While facing obvious limitation in terms of language coverage, corpus size, and possible artifacts due to the so-called ``translationese'', parallel corpora allow for cross-lingual comparison with a smaller data size and will also be considered in this thesis.
 
 In additional to the main data source of UD treebanks, additional resources will be used in the study as reference and to perform validation and evaluation of the intermediate results. As an example, the valency frames and verb classes as induced from the UD treebanks will be validated, where possible, against the expert-annotated data from \textbf{ValPaL}\citep{valpal}. \todo{more details on valpal and other possible data}
+
+\subsection{Verb valency features}\label{subsec:features}
+
+A list of binary slot features
+
+
 
 \subsection{Clustering}\label{subsec:clustering}
 
