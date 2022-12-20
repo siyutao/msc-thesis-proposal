@@ -19,18 +19,16 @@ In the first step, the specific uses of verbs are abstracted through a feature s
 
 \subsection{Clustering}\label{subsec:clustering}
 
-The clustering process after feature selection consists of two steps, but the clustering algorithms used need not be the same. The first is the automatic induction of valency frames in a language given the selected features. Given the valency frames in a language, each verb will then be represented by its distribution over the valency frames , which are then clustered into the verb classes.
-Possible clustering algorithms such as k-means \citep{macqueen1967}, which iteratively updates the center of cluster which is represented by the center of data points, until the criteria for convergence is met. Other clustering algorithms should also be investigated \citep{xu2015a}. But given the relative low dimensionality of features, complex clustering algorithms are not expected to be used. Given the two levels of clustering, an alternative approach to be explored is to perform a hierarchical clustering, e.g. a possible adaptation of \citet{parisien2010}, where a Hierarchical Dirichlet process is extended to account for diathesis alternations. 
+The clustering process after feature selection consists of two steps, but the clustering algorithms used need not be the same. The first is the automatic induction of valency frames in a language given the selected features. Given the valency frames in a language, each verb will then be represented by its distribution over the valency frames, which are then clustered into the verb classes. Since we intend to perform unsupervised clustering, the number of valency frames and the number of verb classes are not known beforehand. This requires either using of algorithms that do not require a predefined number of clusters (e.g. Ward clustering), or experimenting with cluster sizes with each language (cf. \cite{schulteimwalde2006}, which used the k-means algorithm with a predefined the gold standard number). Due to the lack the gold standard for many of the languages to be experimented on, the latter seems preferable. The agglomerative clustering method will be used.
 
-
-\todo{what distance measure to use; concrete examplesfrom pilot; Hierarchical Dirichlet}
+Given the relative low dimensionality of hand-selected features, complex clustering algorithms are not anticipated to be necessary. Nevertheless, other clustering algorithms should also be investigated \citep{xu2015a}. Given the two levels of clustering, an approach to be explored is the Hierarchical Dirichlet process, which is particularly suited for clustering grouped data (cf. \citet{parisien2010}, Fig.~\ref{fig:parisien2010}, where a Hierarchical Dirichlet process was extended to account for diathesis alternations).
 
 \begin{figure}
     \includegraphics[width=\textwidth]{figures/verb_alternation_classes.png}
     \centering
+    \caption{(a) Model 1, a Hierarchical Dirichlet Process applied to learning verb argument structure constructions. (b) Model 2,
+    an extension of Model 1 to learn verb alternation classes.}\label{fig:parisien2010}
 \end{figure}
-
-
 
 \subsection{Cross-lingual verb sense alignment}\label{subsec:verblist}
 
@@ -41,4 +39,5 @@ Alternatively, lexicon induction from cross-lingual word embeddings and other NL
 \subsection{Information theory}\label{subsec:infotheory}
 
 Complexity and point-wise mutual information, cf. in \citet{say2014}.
+
 Complexity \& Point-wise mutual information (PMI)
