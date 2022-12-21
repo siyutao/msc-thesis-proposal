@@ -4,7 +4,7 @@ This section presents the proposed data sources and methodology of the thesis. \
 
 \subsection{Data sources}\label{subsec:data-sources}
 
-\textbf{Universal Dependencies (UD)} is designed to be a cross-linguistically consistent system for annotating morphosyntactic information within a dependency grammar framework \citep{demarneffe2021}. The UD treebanks \citep{universaldep} is the collection of cross-lingual treebanks annotated in the UD framework by an open community of more than 300 contributors. See \ref{tab:treebanks} for a table of languages available in UD v2.5, as an example. \todo{include some more statistics of UD and a potential list of languages to study}
+\textbf{Universal Dependencies (UD)} is designed to be a cross-linguistically consistent system for annotating morphosyntactic information within a dependency grammar framework \citep{demarneffe2021}. The UD treebanks \citep{universaldep} is the collection of cross-lingual treebanks annotated in the UD framework by an open community of more than 300 contributors. See \ref{tab:treebanks} for a table of languages available in UD v2.5, as an example.
 
 \input{figures/ud_languages.tex}
 
@@ -12,7 +12,7 @@ A subset of the UD treebanks, the \textbf{Parallel Universal Dependencies (PUD)}
 
 In additional to the main data source of UD treebanks, additional resources will be used in the study as reference and to perform validation and evaluation of the intermediate results. As an example, the valency frames and verb classes as induced from the UD treebanks will be validated, where possible, against the expert-annotated data from \textbf{ValPaL}\citep{valpal}. \todo{introduce ValPaL a bit more, mention VerbNet, PropBank, FrameNet as necessary}
 
-\subsection{Verb valency features}\label{subsec:features}
+\subsection{Representing verb instances / feature selection}\label{subsec:features}
 
 In the first step, the specific uses of verbs are abstracted through a feature selection process. Each instance of verb use will be represented by syntactic features of the sentence, namely only features that are considered part of valency frame encoding are included. This is in order to focus on whether semantically coherent verb classes can be induced on valency frame information alone. In selecting the features, cross-lingual differences in valency frame coding will be taken into account, e.g. whether a language uses morphological cases or word order to encode valency frame information. \todo{Examples from EN, DE, ZH} 
 
