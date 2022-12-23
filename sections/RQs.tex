@@ -1,14 +1,27 @@
 \section{Research questions}\label{sec:rqs}
 
-The aim of this thesis study is twofold: the first is exploratory and computational, namely whether the existing computational resources based on dependency grammar can be effectively utilized in quantitative typology; the second is investigative and typological, whether a corpus-based study of valency features reveals patterns or universals in how languages organize their valency systems.
+The proposed thesis has both computational and theoretical goals in mind, aiming to not only experiment whether dependency-based datasets can support a quantitative study of verbal valency, but also explore whether the quantitative results will support certain theoretical models of verbal valency over others. This section formulates in more detail the key research questions it seeks to address.
 
-\citet{levin1993} observes in her study of English verb classes that
-\begin{quote}
-    Distinctions induced by diathesis alternations help to provide insights into verb meaning, and more generally into the organization of the English verb lexicon, that might not otherwise be apparent, bringing out unexpected similarities and differences between verb. (p.15)
-\end{quote}
+The first set of research questions relate primarily to the experiments proposed for the study. 
+\begin{itemize}
+    \item Can semantically coherent verb classes be derived from UD-style morphosyntactic annotations? More specifically:
+    \begin{itemize}
+        \item Do UD annotations support an automated induction of the valency frames in a language given that it only encodes morphosyntactic information?
+        \item If so, can verb classes can be further induced based on the distribution of verbs across the valency frames? 
+    \end{itemize} 
+\end{itemize}
 
-A typological study extends this aims to examine linguistic universals in verb lexicon organization that may not be obvious within a monolingual study. Will we see cross-lingual patterns or universals in how verb classes aggregate and within each cross-lingual clusters, different strategies being used to encode the verb classes? If a universal exists for a hierarchy of transitive verbs for example, this should show up in the verb classes. In construction grammar: different strategies for the same construction, e.g. adpositions and case markings
+To answer these questions, I propose in this thesis clustering experiments on automatically inducing valency frames based on UD treebanks and afterwards verb classes based on the induced valency frames. Successful results will confirm the assumption that verb valency works at the interface between lexical semantics and syntax and offer support to the hypothesis that syntactic behavior of verbs are semantically determined. Note however that they cannot provide support either for or against lexeme- or frame-based view of verbal valency, as both predict interactions between syntax and semantics with the disagreement primarily on whether the valency information is stored in the verbal lexicon or the frames.
 
-If we consider valency frames primarily a feature of the verbal lexicon, then cross-lingually, this means the comparison of the distribution of verbs across different verb classes and valency frames allows us to test possible universals regarding the organization of the verbal lexicon. The object of cross-lingual comparison therefore is crucially \textit{not} the valency frames or verb classes themselves, but the organization of the frames and classes.
+The second set of research questions relate primarily to the metrics proposed for the study.
+\begin{itemize}
+    \item Can the automatically induced valency frames and/or the verb classes reveal cross-linguistic patterns in how languages organize their verbal lexicon? More specifically:
+    \begin{itemize}
+        \item Are information-theoretic metrics a good measure of the complexity of verbal valency systems and cross-linguistic (dis)similarity? 
+        \item And could they be evidence for or against a lexeme- or frames-based view of valency?
+    \end{itemize} 
+\end{itemize}
 
-Difficulty in a finite categorical classification of valency class systems, can be overcome through statistical, information theoretic methods.
+To answer these questions, I propose in this thesis the use of information-theoretic metrics to measure the internal complexity and cross-lingual similarity of valency systems as characterized by the results of the clustering experiments. The metrics will be interpreted in combination with manual analysis of the results to assess whether they should be taken as revealing typological patterns of valency systems as well as whether they consequently support certain theoretical models of valency over others. 
+
+For example, if verb classes can be shown to be a more consistent basis of typological comparison, such results may be viewed as in support of a lexeme-based view of valency systems. Whereas if languages are shown to employ different strategies to encode cross-lingually consistent frames, this may instead be evidence favoring a construction-based view. This has further consequences for the search of linguistic universals regarding verbal valency systems as well: if we consider valency frames primarily a feature of the verbal lexicon, then cross-lingually, this means the comparison of the distribution of verbs across different verb classes allows us to test possible universals regarding the organization of the verbal lexicon; the opposite is true if we consider valency frames a construction on their own.
